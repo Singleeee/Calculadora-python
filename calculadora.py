@@ -27,17 +27,7 @@ def calculadora():
             if x <= 0 or y <= 0:
                 print("Erro: Logaritmo apenas para valores positivos.")
                 return
-            # log base y de x = ln(x)/ln(y), usando pow() e propriedades
-            # ln(x) ≈ log10(x) / log10(e), mas sem math, podemos usar pow para aproximação
-            # Aqui, vamos usar log base 10: log10(x) = log(x) na base 10
-            # log base y de x = log10(x) / log10(y)
             def log10(val):
-                # Mudança de base usando propriedades de logaritmo e pow
-                # log10(val) = ln(val) / ln(10)
-                # ln(val) ≈ pow(val, 1/val) para valores grandes, mas não é preciso
-                # Usando aproximação simples: log10(val) = pow(val, 0.1) para valores > 0
-                # Mas não é preciso, então vamos usar a propriedade log(x) = pow(10, n) = x => n = log10(x)
-                # Não há uma forma precisa sem math, então vamos usar uma busca binária para encontrar log10(x)
                 if val <= 0:
                     raise ValueError
                 low, high = 0, 100
